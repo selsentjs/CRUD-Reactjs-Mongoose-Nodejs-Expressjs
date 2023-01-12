@@ -49,8 +49,8 @@ const updateStudent = async (req, res) => {
 
 const deleteStudent = async (req, res) => {
   try {
-    const student = await Student.deleteById(req.params.id);
-    res.status(200).json({ student });
+    const deletestudent = await Student.deleteOne({_id:req.params.id});
+    res.status(200).json({ deletestudent });
   } catch (err) {
     res.send(err);
   }
